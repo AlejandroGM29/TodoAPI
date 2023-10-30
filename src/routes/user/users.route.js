@@ -26,7 +26,6 @@ function validateToken(req, res, next) {
       info: "Token de acceso no proporcionado",
     });
   }
-
   jwt.verify(accessToken, SECRET, (accessTokenError, user) => {
     if (accessTokenError) {
       return res.status(401).json({
